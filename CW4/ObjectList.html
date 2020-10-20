@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../images/icon192.png">
+    <title>List of Objects </title>
+
+  <style>
+    body { max-width: 500px; }
+    #inp { white-space: pre-wrap; }
+    #sample { overflow-x: auto; }
+    #out { color: blue; }
+  </style>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+<b>Text input &emsp;
+<input type=button id=convert value=Convert onclick="toList()">
+</b>
+<p>
+  <textarea id=inp onchange="convert.disabled=false" rows=10 cols=50 >
+  </textarea>
+</p>
+<b>JSON output</b>
+<pre id=out></pre>
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+<p>Ref: 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters#Examples" 
+   target="NewTab">Rest Parameters</a>
+</p>
+
+<p>SS: 
+  <a href="https://github.com/dilarademirhan/BLM19305E/blob/main/SS.PNG?raw=true" 
+     target="NewTab">Ekran Görüntüsü</a>
+</p>
+
+<p>
+  İlk önce boş dizi tanımladım. Sonra toList metodunun içinde diziye elemanları ekledim.
+  Sonra filterla Shipping Costu 50'den fazla olanları yeni diziye aldım. Virgüllü olanları Number olarak görmedi ama düzeltmedim.
+  Maple yeni dizide bir şeyi değiştirdim "değiştirildi" diye.
+  Arrayler için map, filter, push, includes metodlarını kullandım.
+</p>
+<script>
+"use strict";
+let arr = [];
+function toList(str) {
+  function toObject(x) {
+    let b = {}
+  
+    for (let [i,s] of x.split('\t').entries()){
+      b[keys[i]] = (isNaN(s)? s : Number(s))
+      if(!arr.includes(b))
+      arr.push(b)
+    }
+     
+    return b
+  }
+
+
+    if (str) inp.value = str
+    
+    else str = inp.value
+   
+    convert.disabled = true
+    let [d0, ...data] = str.split('\n')
+   
+    let keys = d0.split('\t')
+    console.log("Keys:", keys)
+    let a = data.map(toObject)
+    out.innerText = JSON.stringify(a, '' ,2)
+    console.table(a)
+    return a
+}
+
+
+function ornek(arr){
+var highCosts = arr.filter(function(eleman){
+ return eleman["Shipping Cost"]>=50;
+});
+
+highCosts.map(function(cost){
+  return (cost["Ship Mode"]) = "degistirildi";
+});
+console.log(highCosts);
+}
+
+
+
+    const MyDB = `Ship Mode	Profit	Unit Price	Shipping Cost	Customer Name
+Regular Air	-213,25	38,94	35	Muhammed MacIntyre
+Delivery Truck	457,81	208,16	68,02	Barry French
+Regular Air	46,71	8,69	2,99	Barry French
+Regular Air	1198,97	195,99	3,99	Clay Rozendal
+Regular Air	-4,72	5,28	2,99	Claudia Miner
+Regular Air	782,91	39,89	3,04	Neola Schneider
+Regular Air	93,80	15,74	1,39	Allen Rosenblatt
+Delivery Truck	440,72	100,98	26,22	Sylvia Foulston
+Regular Air	-481,04	100,98	69	Sylvia Foulston
+Regular Air	-11,68	65,99	5,26	Jim Radford
+Regular Air	313,58	155,99	8,99	Jim Radford
+Express Air	26,92	3,69	0,5	Carlos Soltero
+Regular Air	-5,77	4,71	0,7	Carlos Soltero
+Regular Air	-172,88	15,99	13,18	Carl Ludwig
+Regular Air	-144,55	4,89	4,93	Carl Ludwig
+Regular Air	5,76	2,88	0,7	Don Miller
+Regular Air	252,66	40,96	1,99	Jack Garza
+Delivery Truck	-1766,01	95,95	74,35	Julia West
+Regular Air	-236,27	3,89	7,01	Eugene Barchas
+Delivery Truck	80,44	120,98	30	Eugene Barchas
+Regular Air	118,94	500,98	5,76	Eugene Barchas
+Delivery Truck	3424,22	500,98	26	Edward Hooks
+`;
+title.innerText = document.title
+    sample.innerText = toList
+    inp.value = MyDB
+    //toList()  //array of objects
+</script>
+
+
+
+</body>
+</html>
