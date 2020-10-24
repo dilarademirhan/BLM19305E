@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" sizes="192x192" href="/JS/images/JS.png">
+    <title>Make a Table </title>
+
+  <style>
+    body { max-width: 440px; }
+    #sample { overflow-x: auto; }
+    table { border-collapse: collapse; }
+    th { color: blue; padding: 5px 5px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 5px 5px; 
+        text-align: center; 
+        position: relative;
+    }
+    td:hover .tip {
+        visibility: visible;
+    }
+    td .tip {
+        visibility: hidden;
+        font-size: small;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+        left: 5px; 
+        top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<h2 id=title></h2>
+
+<table id="tablo"></table>
+
+<p id=out style="font-size:small"></p>
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+
+<a href="hw1-ss.PNG" 
+    target="NewTab">Screen Shot</a>
+
+<script>
+"use strict";
+
+function Homework1(){
+    const L = [0.5, 1, 1.5, 2, 2.5, 3];
+    let x = 1;
+    const p = [];
+    for (let λ of L) {
+        p.push((Math.exp(-λ)));
+    }
+    let row = "<th></th>";
+    for (let j = 0.5; j <= 3; j += 0.5){ 
+        row += "<th> λ = "+j+"</th>";
+    }
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i <= 8; i++){
+        row = "<th> x = "+i+"</th>";
+        for(let j = 0; j < p.length; j++){
+            row += "<td>"+p[j].toFixed(4)+"</td>"; 
+            p[j] = parseFloat(((p[j]*L[j])/x));
+        }
+        x++;
+        text += "<tr>"+row+"</tr>";
+    }
+    tablo.innerHTML = text; 
+    title.innerText = "Poisson Probabilities";
+    sample.innerText = Homework1.toString();
+}
+
+Homework1();
+    
+</script>
+
+</body>
+</html> 
