@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)https://blm-fsmvu.github.io/305/work/Inspector.html -->
-<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="https://blm-fsmvu.github.io/305/images/icon192.png">
+    <link rel="icon" href="../images/icon192.png">
     <title>Inspector </title>
 
     <style>
@@ -12,55 +12,21 @@
 </head>
 
 <body>
-<p><b id="docName">Inspector V2.15</b> &nbsp;
+<p><b id=docName></b> &nbsp;
 <a href="https://maeyler.github.io/JS/sss/">Read me</a> &nbsp;
 <a href="https://maeyler.github.io/JS/sss/Turkish">Turkish</a> &nbsp;
-<a href="https://blm-fsmvu.github.io/305/work/Objects">Objects</a>
+<a href="Objects">Objects</a>
 </p>
-<div id="sss"><table class="inspector">
-  <tbody><tr>
-    <th><button onclick="previous();hideTip(this)">◀
-    <span class="tip1">Display previous object</span></button>
-    &nbsp; Objects &nbsp;
-    <button onclick="removeIt(event.ctrlKey);hideTip(this)">✘
-    <span class="tip1">Delete current object<br>
-        (&lt;CTRL&gt; deletes all)</span></button>
-    </th>
-    <th><button id="menu" onclick="display(MENU);hideTip(this)">M
-    <span class="tip1">Display Menu</span></button>
-    &nbsp; Properties
-    </th>
-  </tr>
-  <tr>
-    <td rowspan="3"><ul id="list1" onclick="doClick(event, this)" tabindex="0" onkeydown="doKey(event)"><li style="color: white; background: blue;"><b>Menu</b> Menu</li><li><b>Menu</b> Chap4</li><li><b>Menu</b> Chap6</li><li><b>Menu</b> Quiz</li><li><b>Menu</b> Async</li></ul></td>
-    <td><ul id="list2" onclick="doClick(event, this)"><li class="cfirst">Menu<span class="tip2">Menu<br>Object</span></li><li>a: [0,11,22,abc]</li><li>c: <b>Object</b></li><li>d: Thu Oct 22 2020 09:55:58 ...</li><li>s: "Small is beautiful"</li><li>window: <b>Window</b></li><li class="cname">Object</li></ul></td>
-  </tr>
-  <tr>
-    <th>Methods
-    <input id="sorted" type="checkbox" checked="true" onclick="display(_)">
-    <span id="small">sort</span>
-    </th>
-  </tr>
-  <tr>
-    <td><ul id="list3" onclick="doClick(event, this)"><li class="cfirst">Menu<span class="tip2">Menu<br>Object</span></li><li>allKeysIn</li><li>allValuesOf</li><li>deepEqual</li><li>toString</li><li class="cname">Object</li></ul></td>
-  </tr>
-  <tr>
-    <td colspan="2"><input id="inp" onkeyup="doEnter(event)">
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" id="out">[object Menu] Menu — 5 properties and 4 methods</td>
-  </tr>
-</tbody></table></div>
-<p><input type="file" multiple="" onchange="fileSelect(this)"></p>  
-<pre id="disp1"></pre> <img id="disp2">
+<div id=sss></div>
+<p><input type=file multiple onChange='fileSelect(this)' /></p>  
+<pre id=disp1></pre> <img id=disp2 />
 
-<link href="./Inspector_files/inspector.css" rel="stylesheet">
-<script src="./Inspector_files/inspector.js"></script>
-<script src="./Inspector_files/chap4.js"></script>
-<script src="./Inspector_files/chap6.js"></script>
-<script src="./Inspector_files/Quiz.js"></script>
-<script src="./Inspector_files/Async.js"></script>
+<link  href="https://maeyler.github.io/JS/sss/inspector.css" rel="stylesheet">
+<script src="https://maeyler.github.io/JS/sss/inspector.js"></script>
+<script src="chap4.js"></script>
+<script src="chap6.js"></script>
+<script src="Quiz.js"></script>
+<script src="Async.js"></script>
 <script>
 "use strict";
 class Chap4 extends Menu {
@@ -81,18 +47,22 @@ class Chap4 extends Menu {
 }
 
 
-// 1. Soru 
+
+
+// 1. Soru
+
 let i = 0;
 let numberOfEntry = 0;
+let k = 0;
 for (let Entry of JOURNAL){
            numberOfEntry++;
     if(Entry.events.includes("work") || Entry.events.includes("weekend") ){
         i++;
     }else{
-        console.log("İkisini de içermeyen bir Entry var");
+        j++;
     }
 } 
-console.log(numberOfEntry + " = " +i);
+console.log("total number of entries: " + numberOfEntry + " = " + "Number of entries containing at least one: " +i + "the number of entries containing both" + k);
 
 var w = {
   get(item){
@@ -161,9 +131,8 @@ function init() {
         inspect(sss, init); //makes the table
         inp.value = "new Date()";
     } catch(e) {
-        //reportError(e);
+        reportError(e);
     }
 </script>
-
-
-</body></html>
+</body>
+</html>
