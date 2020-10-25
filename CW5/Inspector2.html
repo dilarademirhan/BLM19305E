@@ -21,6 +21,14 @@
 <p><input type=file multiple onChange='fileSelect(this)' /></p>  
 <pre id=disp1></pre> <img id=disp2 />
 
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+
+
+
 <link  href="https://maeyler.github.io/JS/sss/inspector.css" rel="stylesheet">
 <script src="https://maeyler.github.io/JS/sss/inspector.js"></script>
 <script src="chap4.js"></script>
@@ -46,68 +54,66 @@ class Chap4 extends Menu {
   }
 }
 
+function cw5(){
+    // 1. Soru
 
+    let i = 0;
+    let numberOfEntry = 0;
+    let k = 0;
+    for (let Entry of JOURNAL){
+              numberOfEntry++;
+        if(Entry.events.includes("work") || Entry.events.includes("weekend") ){
+            i++;
+        }else{
+            j++;
+        }
+    } 
+    console.log("total number of entries: " + numberOfEntry + " = " + "Number of entries containing at least one: " +i + "the number of entries containing both" + k);
 
-
-// 1. Soru
-
-let i = 0;
-let numberOfEntry = 0;
-let k = 0;
-for (let Entry of JOURNAL){
-           numberOfEntry++;
-    if(Entry.events.includes("work") || Entry.events.includes("weekend") ){
-        i++;
-    }else{
-        j++;
-    }
-} 
-console.log("total number of entries: " + numberOfEntry + " = " + "Number of entries containing at least one: " +i + "the number of entries containing both" + k);
-
-var w = {
-  get(item){
-    console.log(w[item])
-  }
-}
-
-for (let Entry of JOURNAL){
-  if(Entry.events.includes("weekend")){
-    for (var j = 0; j < Entry.events.length; j++) {
-      var item = Entry.events[j];
-      if(!w[item]){
-        w[item] = 1;
-      } else {
-        w[item] += 1;
+    var w = {
+      get(item){
+        console.log(w[item])
       }
     }
-  }
+
+    for (let Entry of JOURNAL){
+      if(Entry.events.includes("weekend")){
+        for (var j = 0; j < Entry.events.length; j++) {
+          var item = Entry.events[j];
+          if(!w[item]){
+            w[item] = 1;
+          } else {
+            w[item] += 1;
+          }
+        }
+      }
+    }
+
+    // 1. Soru Sonu
+
+
+
+    class Length {
+      constructor(inch=0) {
+        this.inch = Math.round(inch);
+      }
+      get cm() {
+        return (this.inch /0.393700787).toFixed(1);
+      }
+      set cm(value = 1) {
+        this.inch = (value*0.393700787).toFixed(1);
+      }
+      toString() {
+        return this.inch+" inch"
+      }
+      static fromCm(value) {
+        let t = new Length();
+        t.cm = value;
+        return t;
+      }
+    }
+
 }
-
-// 1. Soru Sonu
-
-
-
-class Length {
-  constructor(inch=0) {
-    this.inch = Math.round(inch);
-  }
-  get cm() {
-    return (this.inch /0.393700787).toFixed(1);
-  }
-  set cm(value = 1) {
-    this.inch = (value*0.393700787).toFixed(1);
-  }
-  toString() {
-    return this.inch+" inch"
-  }
-  static fromCm(value) {
-    let t = new Length();
-    t.cm = value;
-    return t;
-  }
-}
-
-
 
 var a, b, c, d, s;  //global variables
 function init() {
@@ -133,6 +139,7 @@ function init() {
     } catch(e) {
         reportError(e);
     }
+    sample.innerText = cw5.toString();
 </script>
 </body>
 </html>
