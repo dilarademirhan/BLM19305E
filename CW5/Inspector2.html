@@ -28,15 +28,19 @@
 let i = 0;
 let numberOfEntry = 0;
 let k = 0;
+let m = 0;
 for (let Entry of JOURNAL){
           numberOfEntry++;
     if(Entry.events.includes("work") || Entry.events.includes("weekend") ){
         i++;
-    }else{
-        j++;
+    }else if(Entry.events.includes("work") && Entry.events.includes("weekend")){
+        k++;
+    }else {
+        m++;
     }
 } 
-console.log("total number of entries: " + numberOfEntry + " = " + "Number of entries containing at least one: " +i + "the number of entries containing both" + k);
+console.log("total number of entries: " + numberOfEntry + " = " + "Number of entries containing at least one: " +i 
++ "The number of entries containing both" + k + "\nThe total number of entries not including both" + m);
 
 var w = {
   get(item){
@@ -118,15 +122,20 @@ class Chap4 extends Menu {
 let i = 0;
 let numberOfEntry = 0;
 let k = 0;
+let m = 0;
 for (let Entry of JOURNAL){
           numberOfEntry++;
     if(Entry.events.includes("work") || Entry.events.includes("weekend") ){
         i++;
-    }else{
-        j++;
+    }else if(Entry.events.includes("work") && Entry.events.includes("weekend")){
+        k++;
+    }else {
+        m++;
     }
 } 
-console.log("Total number of entries: " + numberOfEntry + "\nNumber of entries containing at least one: " +i + "\nThe number of entries containing both: " + k);
+console.log("total number of entries: " + numberOfEntry + " = " + "Number of entries containing at least one: " +i 
++ "The number of entries containing both" + k + "\nThe total number of entries not including both" + m);
+
 
 var w = {
   get(item){
