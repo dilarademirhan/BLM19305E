@@ -39,8 +39,8 @@
 "use strict";
 // JavaScript comment
 function check() { 
-  fetch(url.value).then(r => resp.innerText = "")
-}
+  fetch(url.value).then(r =>  r.ok ? resp.innerText = "OK" : resp.innerText="false" )}
+ 
 function init() {
   plat.innerText = navigator.platform;
   navigator.geolocation.getCurrentPosition(p => 
@@ -51,6 +51,8 @@ function init() {
     title.innerText = document.title;
     sample.innerText = init+'\n'+check;
     init();
+    check();
+
 </script>
 
 </body>
