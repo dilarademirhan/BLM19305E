@@ -142,7 +142,13 @@ function randomStd() {
 }
 function findBest() { //the best gpa in stdMap
     
+    var max = 0;
 
+    for (let std of stdMap.values()) {
+        if (std.gpa > max)
+            max = std.gpa;
+    }
+    report("Best GPA:", max)
 }
 const LINK = "https://maeyler.github.io/JS/data/"
 function readStudents() {
