@@ -31,8 +31,9 @@ function fileSelect() {
 }
 function checkFiles(b) {
     let a = [...local.files]
-    //Implement this
-    out.innerText += 'Implement this '
+    let namesAndTypes = []
+    a.forEach(file => namesAndTypes.push(file['name'] +" "+ file['type']))
+    out.innerText += namesAndTypes.join("\n") + "\n" +a.length + " items checked"
 }
 const L = console.log
 docName.innerText = document.title
