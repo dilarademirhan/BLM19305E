@@ -15,7 +15,7 @@
 <p><b id=docName></b> &nbsp; <a href="Reading_files">Reference</a>
 </p>
 <p>Remote file <br>
-  <input type=text id=remote size=35 value="../images/objects.png">
+  <input type=text id=remote size=35 value="https://dilarademirhan.github.io/BLM19305E/CW8/resim.png">
 </p>
 <p><input type=file id=local multiple onChange='fileSelect()' /></p>  
 <pre id=out></pre>
@@ -32,8 +32,17 @@ function fileSelect() {
 function checkFiles(b) {
     let a = [...local.files]
     let namesAndTypes = []
-    a.forEach(file => namesAndTypes.push(file['name'] +" "+ file['type']))
-    out.innerText += namesAndTypes.join("\n") + "\n" +a.length + " items checked"
+    let sameness = "all files are different."
+    a.forEach(file => namesAndTypes.push(file['name'] 
+    +" "+ file['type']))
+    for (let e of a){
+        if(e.size == b.size && e.type == b.type){
+            sameness = e.name +" is same"
+            break;
+        }
+    }
+    out.innerText += namesAndTypes.join("\n") + "\n" 
+    +a.length + " items checked, " + sameness
 }
 const L = console.log
 docName.innerText = document.title
