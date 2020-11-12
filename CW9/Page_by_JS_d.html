@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" href="../images/icon192.png">
+
+
+<script>
+"use strict";
+function elt(type, ...list) {
+  let e = document.createElement(type)
+  for (let c of list) {
+    e.appendChild(c instanceof Element? c
+             : document.createTextNode(c))
+  }
+  return e
+}
+
+function makePage() {
+
+let para = elt("p", "— ",
+        elt("b", "AUTH"), "DESC",
+         elt("i", "BOOK"), "YEAR"
+       )
+  let span = elt("span")
+  span.style.color = "blue"
+  let bold = elt("b", "Sample code")
+  let pre  = elt("pre", makePage)
+  let link = elt("a", "Creating nodes")
+  let buton = elt("button", "+")
+  let input= elt("input")
+  let p = elt("p")
+  p.style.background="blue"
+
+
+  input.type = "number";
+  input.value = 0;
+  buton.onclick = () =>  p.innerText = Number(p.innerText) + 1
+  input.onchange = () =>  p.innerText = input.innerText
+  document.title = "Counter"
+  document.body = elt("body", 
+      elt("h2", "Counter"), 
+      input,
+      buton, 
+      p,  
+      elt("hr"), 
+      elt("div", bold, pre), 
+-      elt("hr")
+    )
+   
+  document.body.style.maxWidth = "420px"
+}
+
+
+const tree = [], SPACE = '&emsp;', MAX = 26;
+function toTree(e, space) {
+  let c = e.firstChild
+  if (!c || c instanceof Element) c = ''
+  else c = SPACE+c.textContent
+  if (c.length>MAX+3) c = c.substring(0, MAX)+'…'
+  console.log(space.length, e.localName, c)
+  tree.push(space+'+ '+e.tagName+c)
+  for (let c of e.children)
+      toTree(c, space+SPACE)
+}
+makePage(); toTree(document.body, '');
+
+let t = elt("p"); t.style.color = "green";
+t.innerHTML = tree.join('<br>');
+document.body.append(t);
+</script>
+<!-- The document body is made by the script above -->
