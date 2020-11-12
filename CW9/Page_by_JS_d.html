@@ -16,12 +16,6 @@ function elt(type, ...list) {
 
 function makePage() {
 
-let para = elt("p", "— ",
-        elt("b", "AUTH"), "DESC",
-         elt("i", "BOOK"), "YEAR"
-       )
-  let span = elt("span")
-  span.style.color = "blue"
   let bold = elt("b", "Sample code")
   let pre  = elt("pre", makePage)
   let link = elt("a", "Creating nodes")
@@ -29,12 +23,12 @@ let para = elt("p", "— ",
   let input= elt("input")
   let p = elt("p")
   p.style.background="blue"
-
-
+  p.style.color = "white"
   input.type = "number";
   input.value = 0;
-  buton.onclick = () =>  p.innerText = Number(p.innerText) + 1
-  input.onchange = () =>  p.innerText = input.value
+  buton.onclick = () => p.innerText = 
+  Number(p.innerText) + 1
+  input.onchange = () => p.innerText = input.value
   document.title = "Counter"
   document.body = elt("body", 
       elt("h2", "Counter"), 
@@ -43,10 +37,10 @@ let para = elt("p", "— ",
       p,  
       elt("hr"), 
       elt("div", bold, pre), 
--      elt("hr")
+     elt("hr")
     )
+    document.body.style.maxWidth = "420px"
    
-  document.body.style.maxWidth = "420px"
 }
 
 
