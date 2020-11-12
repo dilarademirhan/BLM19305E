@@ -34,7 +34,7 @@ let para = elt("p", "— ",
   input.type = "number";
   input.value = 0;
   buton.onclick = () =>  p.innerText = Number(p.innerText) + 1
-  input.onchange = () =>  p.innerText = input.innerText
+  input.onchange = () =>  p.innerText = input.value
   document.title = "Counter"
   document.body = elt("body", 
       elt("h2", "Counter"), 
