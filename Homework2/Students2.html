@@ -264,7 +264,8 @@ function readCourses() {
     .then( t => makeData(t, Course, crsMap) )
 }
 title.innerText = document.title
-sample.innerText = Course+"\n"+readCourses+"\n"+findBest
+sample.innerText = Course+"\n"+readCourses+"\n"+findBest+"\n"+showExamSchedule+"\n"+
+showStudentsTakingCourse+"\n"+showNumberOfCourses+"\n"+bestGPAOfTheCourse+"\n"+search+"\n"
 readStudents(); readCourses();
 </script>
 </body>
