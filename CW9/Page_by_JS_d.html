@@ -12,7 +12,8 @@ function elt(type, ...list) {
   }
   return e
 }
-
+  
+let p = elt("p")
 function makePage() {
 
   let bold = elt("b", "Sample code")
@@ -20,7 +21,6 @@ function makePage() {
   let link = elt("a", "Creating nodes")
   let buton = elt("button", "+")
   let input= elt("input")
-  let p = elt("p")
   p.style.background="blue"
   p.style.color = "white"
   input.type = "number";
