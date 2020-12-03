@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>GitHub Users</title>
+  <style>
+    body {
+        max-width: 440px;
+    }
+    img {
+        padding-right: 12px; 
+        width: 250px;
+        border: 1px solid lightgray;
+    }
+    #out{
+        margin: 0;
+        font-size: 26px;
+        line-height: 1.25;
+        font-weight: 600;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    }
+    #username{
+        margin: 0;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        color: gray;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    }
+    .c{
+        margin: 0;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+<input type=text id=usr value=maeyler onChange="readUser()">
+<br><br>
+<p id=out></p>
+<p id=username></p>
+<br><br>
+<p class="c" id=uni></p>
+<p class="c" id="loc"></p>
+<p class="c" id=mail></p>
+<a href="" class="c" id=blog></a>
+
+<script>
+"use strict";
+function error(t) {
+    out.style.color = 'red'
+    out.innerText = t; throw t
+}
+async function toJSON(url) {
+    let r = await fetch(url)
+    if (!r.ok) error(r.statusText)
+    return r.json()
+}
+async function readUser() {
+    const BR = "<BR>", 
+      URL = "https://api.github.com/users/"
+    let u = await toJSON(URL+usr.value)
+    if (!u || !u.login) 
+      error(usr.value+' not found')
+    //u.login is the same as usr.value
+    out.style.color = ''
+    out.innerHTML = ''
+    //start with a tiny image
+    let i = document.createElement("img")
+    i.src = u.avatar_url
+    out.appendChild(i)
+    //add name and location
+    let s = ( u.name? u.name : u.login)
+    out.innerHTML += BR + s
+    let l = (u.location? u.location : "")
+    loc.innerHTML += l; 
+    //add link to GitHub 
+    let h = u.login
+    username.innerHTML = h
+    let c = u.company
+    uni.innerText = c
+    //let m = u.email?u.mail:""
+    //mail.innerText = m
+    let b = u.blog
+    blog.innerHTML = b
+}
+    title.innerText = document.title
+    out.innerText = "Reading data"
+    readUser()
+</script>
+
+</body>
+</html>
