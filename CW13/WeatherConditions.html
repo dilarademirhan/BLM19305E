@@ -137,7 +137,7 @@ async function askWeather() {
     let loc = "["+lat.toFixed(2)+", "+lon.toFixed(2)+"]"
     detay.innerText = hh+'\n'+yy+'\n'+loc
         +'\nWind  '+data.wind.speed*3.6+' kph'
-        +'\nWind Degree  '+data.wind.deg 
+        +'\nWind Degree  '+data.wind.deg + '°'
         +'\nPressure '+data.main.pressure+' hpa'
         +'\nHumidity '+data.main.humidity+'%'
     let {sunrise, sunset} = sys, noon = (sunrise+sunset)/2
