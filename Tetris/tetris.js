@@ -66,7 +66,7 @@ function drawPieces(position){
 }
 
 let counter = 0;
-let period = 500;
+let period = 1000;
 let lastTime = 0;
 
 function update(time = 0){
