@@ -168,9 +168,9 @@ function displayFile(fileId){
     .then(r => data.innerText = r.body, error)
 }
 const reader = new FileReader(),
-  apiKey = 'AIzaSyCH22pYgwYoWme6CFPiU3i_JLD-SgATteU',
-  clientId = "864962883135-ut9cl3g1jlqv1frlp2p6cq9r3jsfflkv.apps.googleusercontent.com",
-  scope = 'https://www.googleapis.com/auth/drive.file'  //readonly'
+   apiKey = 'AIzaSyDs-Eh82xV7SqTcqU1sQK7dix5NtUOHZmY',
+   clientId = "446675644899-1akuq9r3hn4cgldjm0kbect892egj0gt.apps.googleusercontent.com",
+   scope = 'https://www.googleapis.com/auth/drive.file'  //readonly'
 async function init() {
     await gapi.auth2.init({ apiKey, clientId, scope })
     if (currentUser().getId()) try {
