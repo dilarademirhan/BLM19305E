@@ -118,7 +118,7 @@ function update(time = 0) {
         position.y++;
         counter = 0;
     }
-    if (position.y >= 23) {
+    if (position.y >= 22) {
         position.y = 23;
         position.x = position.x
     }
