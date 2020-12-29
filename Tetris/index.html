@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetris</title>
+    <style>
+        html, body {
+             background-color: rgb(14, 23, 71);
+        }
+
+        canvas {
+            padding: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border: 5px solid #fff;
+        }
+        .input{
+            position: absolute;
+            padding: 5px;
+        }   
+        
+      </style>
 </head>
 <body>
+    <div style="float:left;">
+
+    <input type="image" src="SoundOFF.png"/>   
+</div>  
+<div style="float:left;">
+
+        <input type="image" src="QnCredits.png"/> 
+    </div>
+
+    <br><br><br><br><br>
+    
+    <!-- <br><br><br><br><br> -->
     <canvas id="background" width="400px" height="500px" />
+   
     <script src="tetris.js"></script>
 </body>
 </html>
