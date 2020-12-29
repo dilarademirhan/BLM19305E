@@ -17,11 +17,6 @@ function sound(src) {
     this.stop = () => this.sound.pause();   
 }
 
-const Tetromino = {
-    pos: {x: 0, y: 0},
-    matrix: null,
-    score: 0,
-};
 
 const matrix = [
     [
