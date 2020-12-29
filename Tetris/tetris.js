@@ -62,7 +62,7 @@ const matrix = [
 ]
 
 
-console.log("nklds")
+
 
 
 const colors = ['#E8D375', '#D65252', '#70D8D5', '#A470D8', '#99D870']
@@ -73,7 +73,7 @@ let m = matrix[Math.floor((Math.random() * 5))] //a random tetromino
 
 function drawPieces(position) {
     context.fillStyle = 'black';
-    context.fillRect(0, 0, canvas.width, canvas.height);s
+    context.fillRect(0, 0, canvas.width, canvas.height);
     document.onkeydown = keyControl; //rotating tetrominoes
     
     m.forEach((row, y) => {
