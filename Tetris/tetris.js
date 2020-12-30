@@ -7,7 +7,6 @@ const tHeight = canvas.height / scale;
 
 let score = 0;
 
-
 let arena = []
 
 const matrix = [
@@ -49,7 +48,7 @@ const matrix = [
 ]
 
 var img = new Image();
-img.src = 'gray.png'
+img.src = 'gray.PNG'
 
 let m = matrix[Math.floor((Math.random() * 5))] //a random tetromino
 
