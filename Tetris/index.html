@@ -3,42 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png">
     <title>Tetris</title>
     <style>
-        html, body {
-             background-color: rgb(14, 23, 71);
+        * {
+            text-align: center;
         }
-
+        body {
+            background: gray;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 2em;
+            /* text-align: center; */
+        }
         canvas {
-            padding: 0;
-            margin: auto;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            border: 5px solid #fff;
+            border: solid .2em #fff;
+            /* height: 678.6px; */
+            height: 575px;
         }
-        .input{
-            position: absolute;
-            padding: 5px;
-        }   
-        
+            
       </style>
 </head>
 <body>
-    <div style="float:left;">
-        <input type="image" src="QnCredits.png"/> 
-    
+    <div id="score"></div>
+    <!-- <div style="float:left;">
+        <input type="image" src="SoundOFF.png" width="50" height="50" text-align="center;" />   
     </div>  
     <div style="float:left;">
-        <input type="image" src="SoundOFF.png"/>      
-    </div>
-
-    <br><br><br><br><br>
-    
-    <!-- <br><br><br><br><br> -->
-    <canvas id="background" width="400px" height="500px" />
+        <input type="image" src="QnCredits.png" width="50" height="50"/> 
+    </div>  -->
    
+    <canvas id="background" width="240" height="400"/>
+   
+
     <script src="tetris.js"></script>
 </body>
 </html>
