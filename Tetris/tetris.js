@@ -344,7 +344,7 @@ function update(time = 0) {
 
         position.y = 0;
         position.x = 5;
-        let m = matrix[Math.floor((Math.random() * 7))]; //a random tetromino
+        m = matrix[Math.floor((Math.random() * 7))]; //a random tetromino
 
         period = 500;
     }
