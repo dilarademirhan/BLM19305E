@@ -47,7 +47,7 @@ const matrix = [
 
 
 
-let m = matrix[Math.floor((Math.random() * 5))] //a random tetromino
+let m = matrix[Math.floor((Math.random() * 7))] //a random tetromino
 
 var img = new Image();
 img.src = '../Tetris/images/gray.PNG'
