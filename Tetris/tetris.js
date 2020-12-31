@@ -50,7 +50,7 @@ const matrix = [
 let m = matrix[Math.floor((Math.random() * 5))] //a random tetromino
 
 var img = new Image();
-img.src = '../images/gray.PNG'
+img.src = '../Tetris/images/gray.PNG'
 
 function drawPieces(position) {
     document.onkeydown = keyControl; //rotating tetrominoes
