@@ -17,14 +17,82 @@
             /* text-align: center; */
         }
         canvas {
-            border: solid .2em #fff;
-            height: 500px;
+            border: solid .1em #fff;
+            position: relative;
+            width: 200px;
+            z-index: 0;
         }
-            
+
+        #up {
+            position: relative;
+            top: 0px;
+            left: 60px;
+        }
+        #down {
+            position: relative;
+            left: 110px;
+            top: 50px;
+        }
+        #left {
+            position: relative;
+            left: 110px;
+            top: 50px;
+        }
+        #right {
+            position: relative;
+            left: 65px;
+            top: 50px;
+        }
+        #space {
+            position: relative;
+            top: 110px; 
+            left: -85px;
+        }
+        #canvas-container {
+            width: 100%;
+            text-align:center;
+        }
+
+        canvas {
+            display: inline;
+        }
       </style>
 </head>
 <body>
-    <div id="score"></div>
+    
+        <!-- <div class="vertical-center"> -->
+            <div id="score"></div> 
+            <div id="canvas-container">
+                <canvas id="background" width="240" height="400"/>
+             </div>
+        <!-- </div> -->
+        <span id=”controls”>
+            
+            <input id="left" type="image" src="left.png" width="40" height="40" />
+            <input id="down" type="image" src="down.png" width="40" height="40" />
+            <input id="up" type="image" src="up.png" width="40" height="40" />
+            <input id="right" type="image" src="right.png" width="40" height="40" />
+            <input id="space" type="image" src="space.PNG" width="140" height="40" />
+            <!-- <span>
+                <div><input type="image" src="SoundOFF.png" width="50" height="50" /></div>
+                <div><input type="image" src="SoundOFF.png" width="50" height="50" /></div>
+                <div><input type="image" src="SoundOFF.png" width="50" height="50" /></div>
+            </span> -->
+        </span>
+        <!-- <span id=”content-mobile”>
+            <input type="image" src="SoundOFF.png" width="50" height="50" /> 
+        </span>
+        <span id=”content-mobile”>
+            <input type="image" src="SoundOFF.png" width="50" height="50" /> 
+        </span> -->
+        <!-- <canvas id="background" width="240" height="400"/> -->
+      
+   
+    
+    <!-- <div style="float:left;" class="vertical-center">
+        <input type="image" src="quitX.png" />
+    </div> -->
+    
     <!-- <div style="float:left;">
         <input type="image" src="SoundOFF.png" width="50" height="50" text-align="center;" />   
     </div>  
@@ -32,8 +100,7 @@
         <input type="image" src="QnCredits.png" width="50" height="50"/> 
     </div>  -->
    
-    <canvas id="background" width="240" height="400"/>
-   
+ 
 
     <script src="tetris.js"></script>
 </body>

@@ -7,6 +7,7 @@ const tHeight = canvas.height / scale;
 
 let score = 0;
 
+
 let arena = []
 
 const matrix = [
@@ -48,7 +49,7 @@ const matrix = [
 ]
 
 var img = new Image();
-img.src = 'gray.PNG'
+img.src = 'gray.png'
 
 let m = matrix[Math.floor((Math.random() * 5))] //a random tetromino
 
@@ -199,6 +200,11 @@ function gameOver() {
 function endGame() {
     document.getElementById("background").style.display = 'none';
     document.getElementById("score").style.display = 'none';
+    document.getElementById("up").style.display = 'none';
+    document.getElementById("down").style.display = 'none';
+    document.getElementById("left").style.display = 'none';
+    document.getElementById("right").style.display = 'none';
+    document.getElementById("space").style.display = 'none';
     let para = document.createElement("p");
     para.innerHTML = "GAME OVER...";
     para.style.font = "bold 50px arial,serif";
@@ -228,7 +234,7 @@ function endGame() {
     document.body.appendChild(scorePara);
     document.body.appendChild(btn); 
     btn.onclick = function () {
-        location.href = "start.html";
+        location.reload();
     };
 }
 	
