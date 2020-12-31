@@ -290,7 +290,7 @@ function endGame() {
     para.style.color = "black"
     let scorePara = document.createElement("p");
     scorePara.innerHTML = "Score: " + score;
-    scorePara.style.font = "bold 50px Algerian";
+    scorePara.style.font = "bold 50px Algerian 'Courier New', monospace";
     scorePara.style.color = "black"
     let btn = document.createElement("button");   
     btn.innerHTML = "Play Again";       
