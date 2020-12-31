@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon.png">
+    <title>Tetris</title>
+    <style>
+        * {
+            text-align: center;
+        }
+        body {
+            background: gray;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 2em;
+            /* text-align: center; */
+        }
+        canvas {
+            border: solid .1em #fff;
+            position: relative;
+            width: 200px;
+            z-index: 0;
+        }
+
+        #up {
+            position: relative;
+            top: 0px;
+            left: 50px;
+        }
+        #down {
+            position: relative;
+            left: 100px;
+            top: 50px;
+        }
+        #left {
+            position: relative;
+            left: 100px;
+            top: 50px;
+        }
+        #right {
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+        #space {
+            position: relative;
+            top: 110px; 
+            left: -95px;
+        }
+        #canvas-container {
+            width: 100%;
+            text-align:center;
+        }
+
+        canvas {
+            display: inline;
+        }
+        #soundoff, #musicoff{
+            
+            display: none;
+        }
+      </style>
+</head>
+<body>
+    <span>
+        <input id="restart" type="image" src="../images/restart.png" width="30" height="30" />
+        <input id="sound" type="image" src="../images/Sound.png" width="30" height="30" />
+        <input id="soundoff" type="image" src="../images/SoundOFF.png" width="30" height="30" />
+        <input id="music" type="image" src="../images/Music.png" width="30" height="30">
+        <input id="musicoff" type="image" src="../images/MusicOFF.png" width="30" height="30">
+    </span>
+
+    <span id="score"></span> 
+
+    <div id="canvas-container">
+        <canvas id="background" width="240" height="400"/>
+    </div>
+
+    <span id=”controls”>
+        <input id="left" type="image" src="../images/left.PNG" width="40" height="40" />
+        <input id="down" type="image" src="../images/down.PNG" width="40" height="40" />
+        <input id="up" type="image" src="../images/up.png" width="40" height="40" />
+        <input id="right" type="image" src="../images/right.PNG" width="40" height="40" />
+        <input id="space" type="image" src="../images/space.PNG" width="140" height="40" />
+    </span>
+        
+    <script src="tetris.js"></script>
+</body>
+</html>
