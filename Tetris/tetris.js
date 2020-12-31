@@ -49,7 +49,7 @@ const matrix = [
 ]
 
 var img = new Image();
-img.src = 'gray.png'
+img.src = 'gray.PNG'
 
 let m = matrix[Math.floor((Math.random() * 5))] //a random tetromino
 
