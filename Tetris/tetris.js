@@ -268,7 +268,7 @@ function gameOver() {
 function endGame() {
     if(soundControl)
         gameOverSound.play()    
-    music.stop()
+    musicControl = 0
 
     document.getElementById("background").style.display = 'none';
     document.getElementById("score").style.display = 'none';
