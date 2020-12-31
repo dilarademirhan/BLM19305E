@@ -64,14 +64,14 @@ function drawPieces(position) {
 }
 
 
-var music = new sound("../sounds/music.mp3");
-var startSound = new sound("../sounds/start.wav");
+var music = new sound("../Tetris/sounds/music.mp3");
+var startSound = new sound("../Tetris/sounds/start.wav");
 startSound.play()
-var rotateSound = new sound("../sounds/SFX_PieceRotateLR.ogg");
-var moveSound = new sound("../sounds/SFX_PieceMoveLR.ogg");
-var hardDropSound = new sound("../sounds/SFX_PieceHardDrop.ogg");
-var clearSound = new sound("../sounds/line.wav");
-var gameOverSound = new sound("../sounds/lose.wav");
+var rotateSound = new sound("../Tetris/sounds/SFX_PieceRotateLR.ogg");
+var moveSound = new sound("../Tetris/sounds/SFX_PieceMoveLR.ogg");
+var hardDropSound = new sound("../Tetris/sounds/SFX_PieceHardDrop.ogg");
+var clearSound = new sound("../Tetris/sounds/line.wav");
+var gameOverSound = new sound("../Tetris/sounds/lose.wav");
 
 
 function sound(src) {
