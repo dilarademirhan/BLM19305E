@@ -121,6 +121,33 @@ function keyControl(e) {
 
 }
 
+document.getElementById("up").onclick = function () {
+    m = m[0].map((val, index) => m.map(row => row[index]).reverse())
+    if(collision()){
+        for (let index = 0; index < 3; index++) {
+            m = m[0].map((val, index) => m.map(row => row[index]).reverse())
+        }
+    }
+};
+document.getElementById("down").onclick = function () {
+    position.y++;
+    counter = 0;
+};
+document.getElementById("left").onclick = function () {
+    position.x--;
+    if (collision())
+        position.x++;
+};
+document.getElementById("right").onclick = function () {
+    position.x++;
+    if (collision())
+        position.x--;
+};
+document.getElementById("space").onclick = function () {
+    period = 0;
+};
+
+
 function collision() {
     
     for (let i = 0; i < m.length; i++) {
