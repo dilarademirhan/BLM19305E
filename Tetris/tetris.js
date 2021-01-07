@@ -255,11 +255,12 @@ function initArena() {
     arena.push(r);
 }
 
-
+let isgameOver = 0
 function gameOver() {
     for (let j = 1; j < arena[1].length - 1; j++)
         if (arena[1][j]){
             endGame();
+            isgameOver = 1
             return initArena();
         }
     return;
@@ -355,6 +356,8 @@ function update(time = 0) {
     drawArena();
 
     drawPieces(position);
+	
+    if(!isgameOver)
     requestAnimationFrame(update);
 }
 
