@@ -352,7 +352,18 @@ function update(time = 0) {
 
     context.fillStyle = 'black';
     context.fillRect(0, 0, canvas.width, canvas.height);
-
+    
+    for (let i = 1; i < 20; i++) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(20, i);
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, 20);
+        ctx.lineWidth = 0.1;
+        ctx.strokeStyle = 'gray';
+        ctx.stroke();
+    }   
+	
     drawArena();
 
     drawPieces(position);
